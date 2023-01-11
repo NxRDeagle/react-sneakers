@@ -14,7 +14,10 @@ function Drawer({ onCloseCart, items = [] }) {
                                 <p className="mb-5">{obj.title}</p>
                                 <b>{obj.price} руб.</b>
                             </div>
-                            <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove" />
+                            <img className="removeBtn"
+                                src="/img/btn-remove.svg"
+                                alt="Remove"
+                            />
                         </div>
                     ))}
 

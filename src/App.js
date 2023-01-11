@@ -6,6 +6,7 @@ import Drawer from './components/Drawer.js';
 function App() {
   const [items, setItems] = React.useState([]);
   const [cartItems, setCartItems] = React.useState([]);
+  const [searchValue, setSearchValue] = React.useState('');
   const [cartIsOpened, setCartOpened] = React.useState(false);
 
   React.useEffect(() => {
@@ -15,26 +16,46 @@ function App() {
   }, []);
 
   const onAddToCart = (obj) => {
-    setCartItems((prev) => [...prev, obj]);
+    setCartItems((prev) => {
+      if (!cartItems.find(element => element.imageUrl === obj.imageUrl))
+        return [...prev, obj];
+      return [...prev];
+    });
+  }
+
+  const onChangeSearchInput = (event) => {
+    setSearchValue(event.target.value);
   }
 
   return (
     <div className="wrapper clear">
-      {cartIsOpened && <Drawer onCloseCart={() => { setCartOpened(false) }} items={cartItems} />}
+      {cartIsOpened &&
+        <Drawer
+          onCloseCart={() => { setCartOpened(false) }}
+          items={cartItems}
+        />}
       <Header onClickCart={() => { setCartOpened(true) }} />
 
       <div className="content p-40">
         <div className="d-flex align-center justify-between mb-40">
-          <h1>Все кроссовки</h1>
+          <h1>{searchValue ? `Поиск по запросу "${searchValue}"` : "Все кроссовки"}</h1>
           <div className="searchBlock">
             <img src="/img/search.svg" alt="Search" />
-            <input placeholder="Поиск..." />
+            <input
+              placeholder="Поиск..."
+              onChange={onChangeSearchInput}
+            />
+            {
+              searchValue && <img className="clear cu-p" src="/img/btn-remove.svg" alt="Clear" />
+            }
           </div>
         </div>
 
         <div className="d-flex flex-wrap">
-          {items.map((item) => (
+          {items.filter(item => item.title.toLowerCase().includes(searchValue.toLowerCase()))
+          .map((item, index) => (
             <Card
+              key={index}
               title={item.title}
               price={item.price}
               imageUrl={item.imageUrl}
