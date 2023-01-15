@@ -1,3 +1,6 @@
+import React from "react";
+import Info from "./Info";
+
 function Drawer({ onClose, onRemove, items = [] }) {
     return (
         <div className="overlay">
@@ -10,7 +13,7 @@ function Drawer({ onClose, onRemove, items = [] }) {
                     <div>
                         <div className="items">
                             {items.map((obj) => (
-                                <div className="cartItem d-flex align-center mb-20">
+                                <div className="cartItem d-flex align-center mb-20" key={obj.id}>
                                     <div
                                         style={{ backgroundImage: `url(${obj.imageUrl})` }}
                                         className="cartItemImg"></div>
@@ -47,15 +50,11 @@ function Drawer({ onClose, onRemove, items = [] }) {
                         </div>
                     </div>
                 ) : (
-                    <div class="cartEmpty d-flex align-center justify-center flex-column flex">
-                        <img class="mb-20" width="120px" height="120px" src="/img/empty-cart.jpg" alt="Empty" />
-                        <h2>Корзина пустая</h2>
-                        <p class="opacity-6">Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.</p>
-                        <button onClick={onClose} class="greenButton">
-                            <img src="/img/arrow.svg" alt="Arrow" />
-                            Вернуться назад
-                        </button>
-                    </div>
+                    <Info
+                        title="Корзина пуста"
+                        description="Добавьте товары в корзину, чтобы сделать заказ."
+                        image="/img/empty-cart.jpg"
+                    />
                 )}
             </div>
         </div>
