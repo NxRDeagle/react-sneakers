@@ -2,7 +2,6 @@
 
 body {
   margin: 0;
-  font-family: 'Inter', system-ui;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #e7f6ff;
@@ -23,13 +22,13 @@ body {
 header {
   border-bottom: 1px solid #eaeaea;
 
+  img {
+    margin-right: 15px;
+  }
+
   h3,
   p {
     margin: 0;
-  }
-
-  img {
-    margin-right: 15px;
   }
 }
 
@@ -39,25 +38,54 @@ header {
   }
 }
 
-.searchBlock {
+.cartEmpty {
+  text-align: center;
+
+  p {
+    width: 280px;
+    line-height: 24px;
+  }
+
+  .greenButton {
+    width: 245px;
+    margin-top: 20px;
+
+    &:hover {
+      img {
+        transform: rotate(180deg) translateX(3px);
+      }
+    }
+
+    img {
+      position: relative;
+      top: 1px;
+      transform: rotate(180deg);
+      margin-right: 15px;
+      transition: transform 0.15s ease-in-out;
+    }
+  }
+}
+
+.search-block {
   border: 1px solid #f3f3f3;
   border-radius: 10px;
   padding: 0 15px;
   position: relative;
 
+  .clear {
+    position: absolute;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    top: 14px;
+    right: 15px;
+  }
+
   input {
-    border: none;
+    border: 0;
     padding: 13px;
     font-size: 16px;
     width: 200px;
-  }
-
-  .clear {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    top: 12px;
-    right: 10px;
   }
 }
 
@@ -65,10 +93,10 @@ header {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 1;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .drawer {
@@ -93,41 +121,6 @@ header {
   }
 }
 
-.cartItem {
-  border: 1px solid #f3f3f3;
-  border-radius: 20px;
-  overflow: hidden;
-  padding: 20px;
-
-  .cartItemImg {
-    width: 70px;
-    height: 70px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 0 10px;
-    margin-right: 20px;
-  }
-
-  p {
-    font-size: 16px;
-    margin: 0;
-  }
-
-  b {
-    font-size: 14px;
-  }
-
-  .removeBtn {
-    opacity: 0.5;
-    cursor: pointer;
-    transition: opacity 0.15s ease-in-out;
-  }
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
 .cartTotalBlock {
   ul {
     display: block;
@@ -137,15 +130,15 @@ header {
       display: flex;
       align-items: flex-end;
       margin-bottom: 20px;
-    }
 
-    div {
-      flex: 1;
-      height: 1px;
-      border-bottom: 1px dashed #dfdfdf;
-      position: relative;
-      top: -4px;
-      margin: 0 7px;
+      div {
+        flex: 1;
+        height: 1px;
+        border-bottom: 1px dashed #dfdfdf;
+        position: relative;
+        top: -4px;
+        margin: 0 7px;
+      }
     }
   }
 
@@ -170,14 +163,14 @@ header {
 .greenButton {
   width: 100%;
   height: 55px;
-  border-radius: 18px;
   background: #9dd558;
-  border: none;
-  color: #ffffff;
+  border-radius: 18px;
+  border: 0;
+  color: #fff;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.2s ease-in-out;
+  transition: background 0.1s ease-in-out;
 
   &:hover {
     background: lighten(#9dd558, 5%);
@@ -185,5 +178,40 @@ header {
 
   &:active {
     background: darken(#9dd558, 5%);
+  }
+}
+
+.cartItem {
+  border: 1px solid #f3f3f3;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 20px;
+
+  .cartItemImg {
+    height: 70px;
+    width: 70px;
+    background-size: contain;
+    background-position: 0 -3px;
+    background-repeat: no-repeat;
+    margin-right: 20px;
+  }
+
+  p {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  b {
+    font-size: 14px;
+  }
+
+  .removeBtn {
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.15s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }
