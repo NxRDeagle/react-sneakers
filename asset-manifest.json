@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/NxRDeagle/react-sneakers/static/css/main.07709e36.css",
+    "main.js": "/NxRDeagle/react-sneakers/static/js/main.e1c2239e.js",
+    "index.html": "/NxRDeagle/react-sneakers/index.html",
+    "main.07709e36.css.map": "/NxRDeagle/react-sneakers/static/css/main.07709e36.css.map",
+    "main.e1c2239e.js.map": "/NxRDeagle/react-sneakers/static/js/main.e1c2239e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.07709e36.css",
+    "static/js/main.e1c2239e.js"
+  ]
+}
