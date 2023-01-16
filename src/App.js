@@ -23,6 +23,7 @@ function App() {
       const itemsResponse = await axios.get('https://63bc4615fa38d30d85c2bceb.mockapi.io/items');
 
       setIsLoading(false);
+      
       setCartItems(cartResponse.data);
       setFavorites(favoritesResponse.data);
       setItems(itemsResponse.data);
@@ -34,28 +35,28 @@ function App() {
   const onAddToCart = (obj) => {
     console.log(obj);
 
-    if (cartItems.find((item) => Number(item.id) === Number(obj.id))) {
+    if (cartItems.find(item => Number(item.id) === Number(obj.id))) {
       axios.delete(`https://63bc4615fa38d30d85c2bceb.mockapi.io/cart/${obj.id}`);
-      setCartItems((prev) => prev.filter((item) => Number(item.id) !== Number(obj.id)));
+      setCartItems(prev => prev.filter(item => Number(item.id) !== Number(obj.id)));
     } else {
       axios.post('https://63bc4615fa38d30d85c2bceb.mockapi.io/cart', obj);
-      setCartItems((prev) => [...prev, obj]);
+      setCartItems(prev => [...prev, obj]);
     }
   };
 
   const onRemoveItem = (id) => {
     axios.delete(`https://63bc4615fa38d30d85c2bceb.mockapi.io/cart/${id}`);
-    setCartItems((prev) => prev.filter((item) => item.id !== id));
+    setCartItems(prev => prev.filter(item => item.id !== id));
   };
 
   const onAddToFavorite = async (obj) => {
     try {
-      if (favorites.find((favObj) => Number(favObj.id) === Number(obj.id))) {
+      if (favorites.find(favObj => Number(favObj.id) === Number(obj.id))) {
         axios.delete(`https://63c3a57da9085635752ac471.mockapi.io/favorites/${obj.id}`);
-        setFavorites((prev) => prev.filter((item) => Number(item.id) !== Number(obj.id)));
+        setFavorites(prev => prev.filter(item => Number(item.id) !== Number(obj.id)));
       } else {
         const { data } = await axios.post('https://63c3a57da9085635752ac471.mockapi.io/favorites', obj);
-        setFavorites((prev) => [...prev, data]);
+        setFavorites(prev => [...prev, data]);
       }
     } catch (error) {
       alert('Не удалось добавить в закладки');
@@ -87,7 +88,6 @@ function App() {
         )}
 
         <Header onClickCart={() => setCartOpened(true)} />
-
 
         <Routes>
           <Route path="/" exact

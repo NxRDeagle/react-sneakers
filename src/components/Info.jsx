@@ -1,7 +1,7 @@
 import React from 'react';
 import AppContext from './Context';
 
-const Info = ({ title, image, description }) => {
+export const Info = ({ title, image, description }) => {
     const { setCartOpened } = React.useContext(AppContext);
 
     return (
