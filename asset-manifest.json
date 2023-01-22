@@ -1,13 +1,25 @@
 {
   "files": {
-    "main.css": "/NxRDeagle/react-sneakers/static/css/main.07709e36.css",
-    "main.js": "/NxRDeagle/react-sneakers/static/js/main.e1c2239e.js",
-    "index.html": "/NxRDeagle/react-sneakers/index.html",
-    "main.07709e36.css.map": "/NxRDeagle/react-sneakers/static/css/main.07709e36.css.map",
-    "main.e1c2239e.js.map": "/NxRDeagle/react-sneakers/static/js/main.e1c2239e.js.map"
+    "main.css": "/react-sneakers/static/css/main.07709e36.css",
+    "main.js": "/react-sneakers/static/js/main.2492f7b8.js",
+    "static/media/complete-order.jpg": "/react-sneakers/static/media/complete-order.b997b2a143b197da5f98.jpg",
+    "static/media/empty-cart.jpg": "/react-sneakers/static/media/empty-cart.0366979184a44172f310.jpg",
+    "static/media/unliked.svg": "/react-sneakers/static/media/unliked.dbddb85a65c80405e2d8ac198b59ea70.svg",
+    "static/media/btn-checked.svg": "/react-sneakers/static/media/btn-checked.4bd49de75a0e5a3ef4c2aa960665057e.svg",
+    "static/media/heart.svg": "/react-sneakers/static/media/heart.fb6fc173851dd67a64d51b7306e810d1.svg",
+    "static/media/liked.svg": "/react-sneakers/static/media/liked.5d926b75507b45bd8c1c9c16499e4352.svg",
+    "static/media/user.svg": "/react-sneakers/static/media/user.381202f7e3edbc1a00b14fbd5e529a32.svg",
+    "static/media/cart.svg": "/react-sneakers/static/media/cart.13b30700bcb8292bc12b12b5bae15a2a.svg",
+    "index.html": "/react-sneakers/index.html",
+    "static/media/search.svg": "/react-sneakers/static/media/search.48c52bf5d459537e27c07f88eb08c050.svg",
+    "static/media/btn-remove.svg": "/react-sneakers/static/media/btn-remove.b1fef0aa93fbf25374f4991d23f900d8.svg",
+    "static/media/btn-plus.svg": "/react-sneakers/static/media/btn-plus.b88e94c67ea7ac0cfa69033241c96b8c.svg",
+    "static/media/arrow.svg": "/react-sneakers/static/media/arrow.fc3222511ec5a224a4abf3bbf4c2566f.svg",
+    "main.07709e36.css.map": "/react-sneakers/static/css/main.07709e36.css.map",
+    "main.2492f7b8.js.map": "/react-sneakers/static/js/main.2492f7b8.js.map"
   },
   "entrypoints": [
     "static/css/main.07709e36.css",
-    "static/js/main.e1c2239e.js"
+    "static/js/main.2492f7b8.js"
   ]
 }
